@@ -52,7 +52,7 @@ app.get("/market", (req, res)=>{
   res.sendFile(`${__dirname}/public/html/market.html`)
 })
 
-app.get("/products", async (req, res)=>{
+app.get("/allProducts", async (req, res)=>{
   let prod = await products.find({})
   res.json(prod)
 })

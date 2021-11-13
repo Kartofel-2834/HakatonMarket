@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Kurban</title>
 
     <link rel="stylesheet" href="/file?path=css/basic.css">
     <link rel="stylesheet" href="/file?path=css/account.css">
@@ -12,7 +12,7 @@
     <div id="app">
       <div class="profile_header grid_layout_inner">
         <div class="profile_intro_inner grid_layout_element">
-          <img src="/file?path=img/intro.jpg" class="profile_intro">
+          <img src="/file?path=img/user_intro.jpg" class="profile_intro">
         </div>
 
         <div class="grid_layout_element" style="margin: auto">
@@ -28,17 +28,22 @@
           </div>
         </div>
 
-        <div class="profile_products_inner">
-          <product-square v-for="product in basket"
+        <div class="profile_products_inner space_around">
+          <account-product-square v-for="product in basket"
             :product="product"
             :basket="basket.map(p => p._id)"
             :addtobasketmethod="addToBasket"
             :removefrombasketmethod="deleteFromBasket"
-          ></product-square>
+          ></account-product-square>
         </div>
       </div>
 
-
+      <!--
+      :product="product"
+      :basket="basket.map(p => p._id)"
+      :addtobasketmethod="addToBasket"
+      :removefrombasketmethod="deleteFromBasket"
+      -->
     </div>
 
 

@@ -2,6 +2,10 @@
   font-family: 'Rubik', sans-serif;
 }
 
+*::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c;
+}
+
 .profile_header{
   width: 100%;
   height: 350px;
@@ -24,6 +28,7 @@
 }
 
 .profile_image_inner{
+  border: 3px solid #1c1c1c;
   width: 10rem;
   height: 10rem;
   overflow: hidden;
@@ -41,4 +46,79 @@
   margin-top: 2rem;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+
+.profile_products_inner{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profile_products_inner{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile_product_info_inner{
+  box-shadow: 0px 3px 4px 1px rgb(34 60 80 / 20%);
+  width: 20%;
+  padding: 1rem;
+  border-radius: 7px;
+  height: 45vh;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.profile_product_image_inner{
+  width: 100%;
+  border-radius: 8px;
+  height: 60%;
+  overflow: hidden;
+}
+
+.profile_product_image{
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.profile_product_text_inner{
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.profile_product_name{
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.profile_product_name::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  margin: 0.25rem 0 0.5rem 0;
+  background-color: #1c1c1c;
+  transition: 0.15s linear;
+}
+
+.profile_product_name:hover::after{ width: 100% }
+
+.profile_product_price{
+  cursor: default;
+}
+
+.product_basket{
+  margin-top: -0.5rem;
+  cursor: pointer;
+  user-select: none;
+  width: 1.5rem;
+  z-index: 5;
+  transition: 0.15s ease-out;
+  padding: 0.7rem;
+  border-radius: 10%;
+}
+
+.product_basket:hover{
+  background-color: #e8e8e8;
 }

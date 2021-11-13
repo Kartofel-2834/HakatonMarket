@@ -63,4 +63,4 @@ const ProductSquare = {
 }
 
 
-export default ProductSquare
+export default { productSquare: ProductSquare, basketButton: AddToBasketButton }

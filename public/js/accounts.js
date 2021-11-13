@@ -1,5 +1,12 @@
-import ProductSquare from '/file?path=js/productSquare.js'
+import AccountProductSquare from '/file?path=js/AccountProductSquare.js'
 
+Array.prototype.add = function(el){
+  if( this.indexOf(el) == -1 ){ this.push(el) }
+}
+
+Array.prototype.remove = function(el){
+  this.splice( this.indexOf(el), 1 )
+}
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -21,7 +28,7 @@ const App = {
   } },
 
   components: {
-    "product-square": ProductSquare,
+    "account-product-square": AccountProductSquare,
   },
 
   methods:{

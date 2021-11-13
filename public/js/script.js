@@ -2,6 +2,8 @@ import CategoryButton from '/file?path=js/categoryButton.js'
 import ProductSquare from '/file?path=js/productSquare.js'
 import BasketMenu from '/file?path=js/basketMenu.js'
 
+const urlParams = new URLSearchParams(window.location.search);
+
 Array.prototype.add = function(el){
   if( this.indexOf(el) == -1 ){ this.push(el) }
 }
@@ -24,10 +26,19 @@ const App = {
   },
 
   async created(){
-    let res = await fetch("/products")
-    let basket = await fetch("/basket")
+    let res = await fetch("/allProducts")
+    let user = await postJson("/getUser", { id: urlParams.get("id") })
 
     res = await res.json()
+    user = await user.json()
+
+    if (user && user._id){
+      this.user = user
+    } else {
+      return
+    }
+
+    let basket = await postJson("/products", { link: user.basket })
     basket = await basket.json()
 
     if( basket && basket.length > 0 ){
@@ -53,7 +64,7 @@ const App = {
 
   components: {
     "category-button": CategoryButton,
-    "product-square": ProductSquare,
+    "product-square": ProductSquare.productSquare,
     "basket-menu": BasketMenu,
   },
 
