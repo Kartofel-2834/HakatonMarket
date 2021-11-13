@@ -1,0 +1,44 @@
+*{
+  font-family: 'Rubik', sans-serif;
+}
+
+.profile_header{
+  width: 100%;
+  height: 350px;
+}
+
+.profile_intro_inner{
+  height: 50%;
+  overflow: hidden;
+}
+
+.profile_intro{
+  width: 100%;
+}
+
+.intro_white_line{
+  height: 50%;
+  z-index: 10;
+  background-color: white;
+  float: bottom;
+}
+
+.profile_image_inner{
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.profile_image{
+  width: 100%;
+  height: auto;
+}
+
+.profile_text_info_inner{
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}

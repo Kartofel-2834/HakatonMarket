@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="/file?path=css/basic.css">
+    <link rel="stylesheet" href="/file?path=css/account.css">
+  </head>
+  <body>
+
+    <div id="app">
+      <div class="profile_header grid_layout_inner">
+        <div class="profile_intro_inner grid_layout_element">
+          <img src="/file?path=img/intro.jpg" class="profile_intro">
+        </div>
+
+        <div class="grid_layout_element" style="margin: auto">
+          <div class="column">
+            <div class="center align profile_image_inner">
+              <img
+              class="profile_image"
+              :src="user._id ? `/file?path=account_posters/${ user._id }.jpg` : ''"
+              >
+            </div>
+
+            <div class="profile_text_info_inner">{{ user.name }}</div>
+          </div>
+        </div>
+
+        <div class="profile_products_inner">
+          <product-square v-for="product in basket"
+            :product="product"
+            :basket="basket.map(p => p._id)"
+            :addtobasketmethod="addToBasket"
+            :removefrombasketmethod="deleteFromBasket"
+          ></product-square>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="/file?path=js/accounts.js"></script>
+  </body>
+</html>

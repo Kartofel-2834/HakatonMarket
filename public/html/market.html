@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MarketPlace</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/file?path=css/basic.css">
+    <link rel="stylesheet" href="/file?path=css/market_style.css">
+  </head>
+  <body>
+    <div id="app">
+
+      <div class="space_between align fixed main_header">
+        <div class="logo">Маркетплейс</div>
+
+        <div class="search_field_inner row">
+          <input type="text" id="searchField" class="search_field" @focus="searchFocus" @blur="searchBlur">
+
+          <div class="search_buttons_inner row">
+            <div class="search_inner_button" @click="search" id="searchLoupe"></div>
+
+            <category-button
+              id="category"
+              :category="category"
+              :categorychangemethod="changeCategory"
+            ></category-button>
+          </div>
+        </div>
+
+
+        <div class="header_buttons_inner space_around">
+          <div class="header_button shopping_basket_button" @click="openBasketMenu"></div>
+          <div class="header_button account_button"></div>
+        </div>
+      </div>
+
+      <div class="bottom_menu">
+        <div class="header_button home_button"></div>
+        <div class="header_button shopping_basket_button" @click="openBasketMenu"></div>
+        <div class="header_button account_button"></div>
+      </div>
+
+      <basket-menu
+        :openedflag="basketMenuOpened"
+        :closemenumethod="closeBasketMenu"
+        :basket="basket"
+        :updatebasketmethod="updateBasket"
+      ></basket-menu>
+
+
+      <div class="space_around products_inner">
+        <product-square v-for="product in productsSorted"
+          :product="product"
+          :basket="basket.map(p => p._id)"
+          :addtobasketmethod="addToBasket"
+          :removefrombasketmethod="deleteFromBasket"
+        ></product-square>
+      </div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="/file?path=js/script.js"></script>
+  </body>
+</html>
