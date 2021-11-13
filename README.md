@@ -14,4 +14,4 @@
 - На данный момент развертывание сервиса производится на localhost 
 - Требуется установленный node js
 # РАЗРАБОТЧИКИ
-- Раджаб Габибов fullstack [id]:(/https://vk.com/makaronbl0)
+- Раджаб Габибов fullstack /https://vk.com/makaronbl0
