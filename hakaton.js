@@ -67,12 +67,6 @@ app.post("/products", async (req, res)=>{
   res.json(prod)
 })
 
-app.get("/basket", async (req, res)=>{
-  let user = await users.findOne({ _id: "617d613e243bdbd090843ad1" }, { "basket": 1, "_id": 0 })
-
-  res.json(user.basket)
-})
-
 app.post("/basketChange", async (req, res)=>{
   if( req.body.productsIds.length == 0 ){
     res.sendStatus(404)
@@ -122,6 +116,16 @@ app.post("/getUser", async (req, res)=>{
     res.json({ ok: false })
     return
   }
+
+  res.json(user)
+})
+
+app.get("/productInfo", (req, res)=>{
+  res.sendFile(`${__dirname}/public/html/product.html`)
+})
+
+app.post("/onlyName", async (req, res)=>{
+  let user = await users.findOne({ _id: req.body.id }, { "name": 1, "_id": 0 })
 
   res.json(user)
 })

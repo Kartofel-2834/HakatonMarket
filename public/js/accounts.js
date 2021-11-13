@@ -24,7 +24,9 @@ const App = {
   data(){ return {
     user: {},
     products: [],
+    basketNotSearched: [],
     basket: [],
+    searchFocused: false,
   } },
 
   components: {
@@ -45,7 +47,18 @@ const App = {
     deleteFromBasket(p){
       this.basket.remove(p)
       postJson("/basketChange", { productsIds: [ p._id ], do: "remove" })
-    }
+    },
+
+    searchFocus(){ this.searchFocused = true },
+    searchBlur(){ this.searchFocused = false },
+
+    search(){
+      let searchField = document.getElementById('searchField')
+      let tester = searchField.value.split(" ").map( e => `(?=.*${e})`).join('')
+
+      tester = new RegExp( tester, "i" )
+      this.basket = this.basketNotSearched.filter( p => tester.test(p.name) )
+    },
   },
 
   async created(){
@@ -58,17 +71,20 @@ const App = {
       return
     }
 
-    let myProducts = await postJson("/products", { link: user.products })
-    myProducts = await myProducts
-
-    if(myProducts.length && myProducts.length > 0){ this.products = myProducts }
-
-
     let basket = await postJson("/products", { link: user.basket })
     basket = await basket.json()
 
 
-    if(basket.length && basket.length > 0){ this.basket = basket }
+    if(basket.length && basket.length > 0){
+      this.basket = basket
+      this.basketNotSearched = basket
+    }
+
+    window.onkeyup = (e)=>{
+      if ( e.keyCode == 13 && this.searchFocused ){
+        this.search()
+      }
+    }
   }
 }
 

@@ -47,7 +47,10 @@ const ProductSquare = {
 
       <div class="product_bottom_inner">
         <div class="space_between align">
-          <div class="product_name slide_underline">{{ product.name }}</div>
+          <a
+            :href="'http://localhost:8000/productInfo?user_id=617d613e243bdbd090843ad1&product_id=' + product._id"
+            class="product_name slide_underline"
+          >{{ product.name }}</a>
           <add-to-basket-button
             :basket="basket"
             :product="product"

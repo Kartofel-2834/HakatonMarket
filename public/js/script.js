@@ -32,6 +32,12 @@ const App = {
     res = await res.json()
     user = await user.json()
 
+    if (res && res.length > 0){
+      this.productsAll = res
+      this.productsSorted = res
+      this.productsNotSearched = res
+    }
+    
     if (user && user._id){
       this.user = user
     } else {
@@ -49,11 +55,6 @@ const App = {
       this.basket = fullBasket && fullBasket.length > 0 ? fullBasket : []
     }
 
-    if (res && res.length > 0){
-      this.productsAll = res
-      this.productsSorted = res
-      this.productsNotSearched = res
-    }
 
     window.onkeyup = (e)=>{
       if ( e.keyCode == 13 && this.searchFocused ){

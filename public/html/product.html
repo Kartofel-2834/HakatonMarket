@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MarketPlace</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/file?path=css/basic.css">
+    <link rel="stylesheet" href="/file?path=css/product.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="top_nav space_between align">
+        <img src="/file?path=icons/shopping_basket.svg" class="top_nav_button">
+        <div class="top_nav_text column align">Маркетплейс</div>
+        <img src="/file?path=icons/home.svg" class="top_nav_button">
+      </div>
+
+      <div class="info_inner space_around" v-if="product">
+        <div class="image_block_inner column">
+          <div class="info_image_inner align center">
+            <img :src="`/file?path=product_posters/${ product._id }.jpg`" class="info_image">
+          </div>
+
+          <div class="product_owner">Поставщик: {{ ownerName }}</div>
+        </div>
+
+
+        <div class="text_info column space_between">
+          <div class="desc">
+            <div class="product_name">{{ product.name }}</div>
+            <div class="product_description">{{ product.description }}</div>
+          </div>
+
+          <div>
+            <div class="price">
+              Стоимость: <b style="margin-left: 1rem">{{ product.price }}</b>
+            </div>
+
+            <div class="grid_layout_inner">
+              <div v-if="inBasket" class="just_button grid_layout_element" @click="addToBasket">Добавить в корзину</div>
+              <div v-else class="just_button grid_layout_element" @click="deleteFromBasket">Удалить из корзины</div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="/file?path=js/productInfo.js"></script>
+  </body>
+</html>

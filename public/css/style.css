@@ -1,0 +1,429 @@
+body{
+  overflow-x: hidden;
+}
+
+div{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Prata', serif;
+  color: white;
+}
+
+h1{
+  font-family: 'PT Serif', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  width: 80%;
+}
+
+h2{
+  font-family: 'Roboto', sans-serif;
+  float: right;
+  text-align: right;
+
+  width: 70%;
+  margin-top: 3rem;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+h3{
+  font-size: 2.5rem;
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  color: black;
+}
+
+h3::after{
+  margin-top: 10px;
+  content: '';
+  width: 110%;
+  height: 4px;
+  background-color: #cea472;
+}
+
+.header{
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-image: url("/file?path=img/intro.jpg");
+}
+
+.intro_button{
+  padding: 1.5rem 3rem;
+  border-radius: 10px;
+  /*background-color: #bfa065;
+  border: 2px solid #e8e8e8;*/
+  transition: 0.25s linear;
+}
+
+.intro_button::after{
+  width: 115% !important;
+}
+
+.intro_button:hover{
+  background-color: white;
+  color: black
+}
+
+.intro_button:hover::after{
+  background-color: #bfa065;
+}
+
+
+.nums{
+  margin-left: 5%;
+}
+
+.zero, .zero_two, .one{ user-select: none }
+
+.zero, .one{ width: 9rem }
+
+.one{
+  margin-top: 8rem;
+  margin-left: -1.5rem;
+}
+
+.left_side_header_part{
+  width: 15%;
+  height: 100vh;
+  background-color: white;
+}
+/*#e8e8e8*/
+.right_side_header_part{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 85%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5)
+}
+
+.header_text_block{
+  z-index: 40;
+  width: 50%;
+  margin-right: 10%;
+}
+
+.cow_blackhole{
+  z-index: 110;
+  width: 100%;
+  background-color: rgba(0,0,0,0.15);
+  height: calc(100% - 7px);
+}
+
+.slide_photo_inner{
+   width: 100%;
+   z-index: 100;
+ }
+
+.cow_block{
+  z-index: 100;
+  margin-top: -2rem
+}
+
+.square_photo{ width: 50% }
+
+.square_photo:last-child{
+  margin-left: -5px;
+}
+
+.zero_two_inner{
+  margin: 0 6rem;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zero_two{ width: 100% }
+
+.second_slide{
+  margin: 3rem 7%;
+}
+
+.second_slide_text_inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.second_slide_text{
+  max-width: 45%;
+}
+
+.apples_inner{
+  max-width: 50%;
+  min-width: 40%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.apples_inner::before, .dostavka_inner::before{
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  width: 100%;
+  content: "";
+  z-index: 10;
+  background-color: black;
+  opacity: 0.15;
+}
+
+.apples{
+  width: 100%;
+}
+
+.slide_button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 3rem;
+  font-weight: 700;
+  width: fit-content;
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+}
+
+.slide_button::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  margin-top: 7px;
+  transition: 0.15s linear;
+}
+
+.slide_button:hover::after{
+  width: 110%;
+}
+
+.third_slide{
+  margin-top: 10rem;
+  align-items: center;
+}
+
+.dostavka_inner{
+  max-width: 80%;
+  max-height: 100vh;
+}
+
+.dostavka_inner::before{
+  opacity: 0.4;
+}
+
+.dostavka{
+  transform: rotateY(180deg);
+  width: 100%;
+  max-height: 100vh;
+}
+
+.third_slide_side_block{
+  padding-bottom: 2em;
+  padding-left: 8rem;
+  padding-right: 4rem;
+  z-index: 50;
+  width: 45%;
+  height: fit-content;
+  background-color: #bfa065;
+}
+
+.side_block_header{
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 1em 0 0.7em 0;
+}
+
+.side_block_text{
+  color:white;
+  padding-right: 4rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.side_block_link{
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.side_block_link::after{ background-color: white }
+
+.last_block{
+  margin-bottom: 3em;
+}
+
+.zero_three_inner{
+  z-index: 50;
+  margin-left: 25%;
+}
+
+.zero_full{
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.three{
+  opacity: 0.9;
+  margin-top: 2rem;
+  margin-left: -2rem;
+}
+
+.contacts{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 3rem;
+}
+
+.contacts_header{
+  margin-top: 3rem;
+  align-items: center;
+  font-size: 1.7rem;
+}
+
+.contacts_info{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1em;
+  text-transform: none;
+}
+
+@media all and (max-width: 1100px){
+  .left_side_header_part{ display: none }
+  .nums{ display: none }
+
+  .right_side_header_part{
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .header_text_block{
+    width: 100%;
+    margin: 0;
+  }
+
+  h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.8rem;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2{
+    margin: 4rem 0 0 5rem;
+    font-weight: 500;
+    font-size: 2.3rem;
+    float: none;
+    text-align: left;
+  }
+
+  .zero_two_inner{ width: 100% }
+
+  .apples_inner{ display: none }
+
+  .second_slide_text{
+    margin: 0 auto;
+    max-width: 90%
+  }
+
+  h3{
+    font-size: 3.5rem;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .slide_button{
+    font-size: 2.4rem;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slide_button::after{
+    margin-top: 15px;
+    height: 5px;
+  }
+
+  .third_slide_side_block{
+    width: 75%;
+  }
+
+  .side_block_header{
+    font-family: 'EB Garamond', serif;
+    text-transform: none;
+    text-align: left;
+    font-size: 3.5rem;
+  }
+
+  .second_slide_text{
+    font-size: 2rem;
+  }
+
+  .side_block_text{
+    font-size: 2rem
+  }
+
+  .side_block_link{
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .contacts_header{ font-size: 2.5rem }
+  .contacts_info{ margin-top: 3rem }
+  .dostavka_inner{ display: none }
+}
+
+@media all and (min-width: 1400px){
+  .header_text_block{
+    width: 72%;
+  }
+
+  .third_slide_side_block{
+    width: 55%;
+  }
+
+  .zero_three_inner{
+    margin-left: 40%;
+  }
+
+  h1{ font-size: 5rem }
+
+  h2{ font-size: 2.6rem }
+
+  .zero_two{
+    width: 65%;
+  }
+
+  .second_slide_text{ font-size: 2.2rem }
+
+  .slide_button{ font-size: 1.6rem }
+
+  .slide_button::after{ height: 3px }
+
+  h3{ font-size: 2.8rem }
+
+  .side_block_header{ font-size: 3.4rem }
+  .side_block_text{ font-size: 1.7rem }
+
+  .contacts_header{ font-size: 2.4rem }
+  .contacts_info{ font-size: 2.2rem }
+}

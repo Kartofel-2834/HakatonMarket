@@ -1,0 +1,104 @@
+*{
+  font-family: "Rubik", sans-serif;
+}
+
+body{ background-color: white }
+
+#app{ margin-bottom: 3rem }
+
+.top_nav{
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 85%;
+  height: 30px;
+}
+
+.top_nav_button{
+  cursor: pointer;
+  width: 2rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: 0.15s linear;
+}
+
+.top_nav_button:hover{
+  background-color: #e8e8e8;
+}
+
+.top_nav_text{
+  cursor: default;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.top_nav_text::after{
+  content: '';
+  height: 3px;
+  width: 110%;
+  background-color: #1c1c1c;
+  margin-top: 0.5rem;
+}
+
+.info_inner{
+  width: 80%;
+  margin: 3rem auto 0 auto;
+}
+
+.image_block_inner{
+  width: 45%;
+}
+
+.info_image_inner{
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.info_image{
+  width: 100%;
+}
+
+.product_owner{
+  cursor: default;
+  text-align: center;
+  margin-top: 1.6rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.text_info{ width: 40% }
+
+.product_name{
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1rem 0 2rem 0;
+}
+
+.product_description{ font-size: 1.1rem }
+
+.price{
+  cursor: default;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+
+.just_button{
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: #1c1c1c;
+  color: white;
+  transition: 0.15s linear;
+  cursor: pointer;
+  margin: 1rem 0;
+  width: fit-content;
+  border-radius: 6px;
+  border: 3px solid #1c1c1c;
+}
+
+.just_button:hover{
+  box-shadow: 0px 3px 4px 1px rgb(34 60 80 / 20%);
+  color: #1c1c1c;
+  background-color: white;
+}

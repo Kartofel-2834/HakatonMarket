@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Kurban</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/file?path=css/basic.css">
     <link rel="stylesheet" href="/file?path=css/account.css">
   </head>
@@ -28,22 +30,35 @@
           </div>
         </div>
 
-        <div class="profile_products_inner space_around">
-          <account-product-square v-for="product in basket"
-            :product="product"
-            :basket="basket.map(p => p._id)"
-            :addtobasketmethod="addToBasket"
-            :removefrombasketmethod="deleteFromBasket"
-          ></account-product-square>
-        </div>
       </div>
 
-      <!--
-      :product="product"
-      :basket="basket.map(p => p._id)"
-      :addtobasketmethod="addToBasket"
-      :removefrombasketmethod="deleteFromBasket"
-      -->
+      <div class="search_field_inner space_around align">
+        <div class="search_header align">
+          <img class="search_header_icon" src="/file?path=icons/shopping_basket.svg">
+          <div class="search_header_text">Корзина покупок</div>
+        </div>
+
+        <div class="search_input_inner row">
+          <input type="text" id="searchField" class="search_field" @focus="searchFocus" @blur="searchBlur">
+
+          <div class="search_buttons_inner row">
+            <div class="search_inner_button" @click="search" id="searchLoupe"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="profile_products_inner space_around">
+        <account-product-square v-for="product in basket"
+        :product="product"
+        :basket="basket.map(p => p._id)"
+        :addtobasketmethod="addToBasket"
+        :removefrombasketmethod="deleteFromBasket"
+        ></account-product-square>
+      </div>
+
+      <div class="profile_footer"></div>
+
     </div>
 
 

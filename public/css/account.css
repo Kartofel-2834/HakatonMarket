@@ -122,3 +122,55 @@
 .product_basket:hover{
   background-color: #e8e8e8;
 }
+
+.search_header_text{
+  cursor: default;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.search_header_icon{
+  width: 1.7rem;
+  margin-right: 0.5rem;
+}
+
+.search_field_inner{
+  width: 70%;
+  border-radius: 8px;
+  background-color:white;
+  padding: 1.5rem 0;
+  margin: 0 auto 2.5rem auto;
+}
+
+.search_input_inner{
+  width: 45%;
+}
+
+.search_field{
+  text-align: center;
+  border: 3px solid #bfa065;
+  border-right: none;
+  border-radius: 7px 0 0 7px;
+  width: 100%;
+  appearance: none;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+.search_inner_button{
+  border-radius: 0 7px 7px 0;
+  cursor: pointer;
+  background: no-repeat center/40%;
+  width: 4rem;
+  transition: 0.15s linear;
+}
+
+#searchLoupe{
+  background-image: url("/file?path=icons/search.svg");
+  background-color: #1c1c1c;
+}
+
+#searchLoupe:hover{
+  background-color: #1c1c1cdb
+}
